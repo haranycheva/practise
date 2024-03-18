@@ -7,7 +7,8 @@ const defParams = {
   orientation: "landscape",
 };
 
-export async function getPhotos(query){
-    const res = await axios.get(`/search?query=${query}`, defParams);
+export async function getPhotos(query, page, perPage){
+    const res = await axios.get(`/search?page=${page}&per_page=${perPage}&query=${query}`, defParams);
+    console.log(res.data);
     return res.data
 }
